@@ -27,6 +27,45 @@ var TodoItemsService = (function () {
         return this.getTodoItems()
             .then(function (todo_items) { return todo_items.filter(function (todo_item) { return todo_item.id === id; })[0]; });
     };
+    TodoItemsService.prototype.save = function (todo_item) {
+        if (todo_item.id) {
+            return this.put(todo_item);
+        }
+        else {
+            return this.post(todo_item);
+        }
+    };
+    TodoItemsService.prototype.delete = function (todo_item) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        var url = this.todo_itemsUrl + "/" + todo_item.id;
+        return this.http
+            .delete(url, headers)
+            .toPromise()
+            .catch(this.handleError);
+    };
+    // Add new Todo
+    TodoItemsService.prototype.post = function (todo_item) {
+        var headers = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        return this.http
+            .post(this.todo_itemsUrl, JSON.stringify(todo_item), { headers: headers })
+            .toPromise()
+            .then(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    // Update existing Todo
+    TodoItemsService.prototype.put = function (todo_item) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        var url = this.todo_itemsUrl + "/" + todo_item.id;
+        return this.http
+            .put(url, JSON.stringify(todo_item), { headers: headers })
+            .toPromise()
+            .then(function () { return todo_item; })
+            .catch(this.handleError);
+    };
     TodoItemsService.prototype.handleError = function (error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
