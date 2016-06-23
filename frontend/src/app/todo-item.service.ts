@@ -22,9 +22,10 @@ export class TodoItemsService {
       .then(todo_items => todo_items.filter(todo_item => todo_item.id === id)[0]);
   }
 
-  save(todo_item: TodoItem): Promise<TodoItem> {
-      if (todo_item.id) {
-        return this.put(todo_item);
-      }
-      return this.post(todo_item);
-    }
+
+
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+  }
+}

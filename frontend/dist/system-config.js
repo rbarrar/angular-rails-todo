@@ -19,6 +19,7 @@ var barrels = [
     '@angular/compiler',
     '@angular/http',
     '@angular/router',
+    '@angular/router-deprecated',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
     // Thirdparty barrels.
@@ -26,6 +27,9 @@ var barrels = [
     // App specific barrels.
     'app',
     'app/shared',
+    'app/home',
+    'app/todo-item',
+    'app/todo-items',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

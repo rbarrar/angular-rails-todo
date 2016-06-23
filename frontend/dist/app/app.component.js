@@ -9,18 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var _1 = require('./todo-items/');
+var _2 = require('./todo-item/');
+var _3 = require('./home/');
+var todo_item_service_1 = require('./todo-item.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Todo App!';
+    function AppComponent(todo_itemsService, router) {
+        this.todo_itemsService = todo_itemsService;
+        this.router = router;
+        this.title = 'Todos!';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.router.navigate(['Home']);
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'app-root',
             templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
+            styleUrls: ['app.component.css'],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            providers: [todo_item_service_1.TodoItemsService, router_deprecated_1.ROUTER_PROVIDERS]
+        }),
+        router_deprecated_1.RouteConfig([
+            { path: '/todo_items', component: _1.TodoItemsComponent, name: 'TodoItems' },
+            { path: '/todo_items/:id', component: _2.TodoItemComponent, name: 'TodoItem' },
+            { path: '/home', component: _3.HomeComponent, name: 'Home' }
+        ]), 
+        __metadata('design:paramtypes', [todo_item_service_1.TodoItemsService, router_deprecated_1.Router])
     ], AppComponent);
     return AppComponent;
 }());

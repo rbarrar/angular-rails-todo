@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { TodoItemsComponent } from './todo-items/';
 import { TodoItemComponent } from './todo-item/';
-import { HomeComponent } from './+home/';
-import { TodoItemsService } from './todo-items.service'
+import { HomeComponent } from './home/';
+import { TodoItemsService } from './todo-item.service'
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [TodoItemsService, ROUTER_PROVIDERS]
 })
