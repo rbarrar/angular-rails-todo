@@ -1,3 +1,14 @@
-<p>
-  todo-item works!
-</p>
+<h3>To Do</h3>
+
+<div *ngIf="todo_item">
+  <p><strong>ID:</strong> {{todo_item.id}}</p>
+  <p><strong>Title:</strong> {{todo_item.title}}</p>
+  <p><strong>Created at:</strong> {{todo_item.created_at}}</p>
+  <p><strong>Updated at:</strong> {{todo_item.updated_at}}</p>
+
+  <div>
+    <label>New Title</label>
+    <input [(ngModel)]="todo_item.title" placeholder= "title" />
+    <button (click)="save()">Save</button>
+  </div>
+</div>
