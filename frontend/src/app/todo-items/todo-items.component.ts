@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  moduleId: module.id,
+  selector: 'app-todo-items',
+  templateUrl: 'todo-items.component.html',
+  styleUrls: ['todo-items.component.css']
+})
+export class TodoItemsComponent implements OnInit {
+
+  constructor() {}
+
+  ngOnInit() {
+  }
+
+}
