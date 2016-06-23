@@ -1,4 +1,4 @@
-class TodoItemsController < ApplicationController
+class Api::TodoItemsController < ApplicationController
   before_action :set_todo_item, only: [:show, :update, :destroy]
 
   # GET /todo_items
@@ -18,7 +18,7 @@ class TodoItemsController < ApplicationController
     @todo_item = TodoItem.new(todo_item_params)
 
     if @todo_item.save
-      render json: @todo_item, status: :created, location: @todo_item
+      render json: @todo_item, status: :created
     else
       render json: @todo_item.errors, status: :unprocessable_entity
     end
