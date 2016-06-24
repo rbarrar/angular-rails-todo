@@ -1,10 +1,10 @@
-<h1>
-  {{title}}
+<h1 class="center-align blue-text text-darken-2">
+  <strong>{{title}}</strong>
 </h1>
 
 <hr>
-<a [routerLink]="['Home']">Home </a>|
-<a [routerLink]="['TodoItems']">All To-Dos </a> 
+<a class="waves-effect waves-light btn" [routerLink]="['Home']">Home </a>
+<a class="waves-effect waves-light btn" [routerLink]="['TodoItems']">All To-Dos </a>
 <hr>
 
 <router-outlet></router-outlet>

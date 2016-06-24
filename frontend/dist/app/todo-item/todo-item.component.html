@@ -1,10 +1,19 @@
 <h3>To Do</h3>
 
 <div *ngIf="todo_item">
-  <p><strong>ID:</strong> {{todo_item.id}}</p>
-  <p><strong>Title:</strong> {{todo_item.title}}</p>
-  <p><strong>Created at:</strong> {{todo_item.created_at}}</p>
-  <p><strong>Updated at:</strong> {{todo_item.updated_at}}</p>
+  <table class="highlight">
+    <thead>
+      <th>Title</th>
+      <th>Descritpion</th>
+      <th>ID</th>
+    </thead>
+    <tr>
+      <td>{{todo_item.title}}</td>
+      <td>{{todo_item.description}}</td>
+      <td>{{todo_item.id}}</td>
+    </tr>
+  </table>
+
 
   <div>
     <label>New Title</label>
