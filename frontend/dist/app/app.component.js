@@ -18,7 +18,7 @@ var AppComponent = (function () {
     function AppComponent(todo_itemsService, router) {
         this.todo_itemsService = todo_itemsService;
         this.router = router;
-        this.title = 'Todos!';
+        this.title = 'To-Dos!';
     }
     AppComponent.prototype.ngOnInit = function () {
         this.router.navigate(['Home']);

@@ -19,7 +19,7 @@ import { TodoItemsService } from './todo-item.service'
   {path: '/home', component: HomeComponent, name: 'Home'}
 ])
 export class AppComponent implements OnInit {
-  title = 'Todos!';
+  title = 'To-Dos!';
 
   constructor(
    private todo_itemsService: TodoItemsService,
