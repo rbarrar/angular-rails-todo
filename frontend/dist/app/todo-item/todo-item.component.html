@@ -1,4 +1,4 @@
-<h3>To Do</h3>
+<h4><strong>To-Do Item</strong></h4>
 
 <div *ngIf="todo_item">
   <table class="highlight">
@@ -18,7 +18,8 @@
   <div>
     <label>New Title</label>
     <input [(ngModel)]="todo_item.title" placeholder= "Title" />
-    <input [(ngModel)]="todo_item.description" placeholder= "Description" />
+    <label>New Description</label>
+    <input class="center-align" id="description" [(ngModel)]="todo_item.description" placeholder= "Description" />
     <input type="checkbox" [(ngModel)]="todo_item.completed" />
     <input type="checkbox" [(ngModel)]="todo_item.archived" />
     <button (click)="save()">Save</button>
