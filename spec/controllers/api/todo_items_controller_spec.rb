@@ -16,6 +16,12 @@ RSpec.describe Api::TodoItemsController, :type => :controller do
       end
     end
   end
+  describe "GET #index" do
+    it "returns a 200 status code" do
+      get :index
+      expect(response).to have_http_status(200)
+    end
+  end
   describe 'GET #index' do
     context 'with todo_items present' do
       it 'shows the todo_items' do
