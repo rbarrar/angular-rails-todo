@@ -1,0 +1,17 @@
+.row {
+  margin-bottom: 0;
+}
+
+.card-image {
+  margin: 0 auto;
+}
+
+img {
+  width: 100px !important;
+  margin: 0 auto;
+}
+
+.card-content {
+  margin-top: 0;
+  margin-bottom: 0;
+}
